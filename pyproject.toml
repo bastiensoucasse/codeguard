@@ -1,0 +1,44 @@
+[project]
+name = "codeguard"
+description = "Python project checker for test and reference documentation files."
+readme = "README.md"
+authors = [{ name = "SOUCASSE Bastien", email = "b.soucasse@geo-sat.com" }]
+requires-python = ">= 3.12"
+dynamic = ["version"]
+dependencies = ["rich", "rich_click"]
+
+[dependency-groups]
+dev = ["mypy", "ruff"]
+
+[project.scripts]
+codeguard = "codeguard.cli:cli"
+
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+source = "vcs"
+
+[tool.hatch.build.hook.vcs]
+version-file = "_version.py"
+
+[tool.hatch.metadata]
+allow-direct-dependencies = true
+
+[tool.ruff]
+line-length = 120
+preview = true
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = ["CPY001"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.mypy]
+strict = true
