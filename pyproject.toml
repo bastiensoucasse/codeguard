@@ -2,7 +2,7 @@
 name = "codeguard"
 description = "Python project checker for test and reference documentation files."
 readme = "README.md"
-authors = [{ name = "SOUCASSE Bastien", email = "b.soucasse@geo-sat.com" }]
+authors = [{ name = "Bastien Soucasse", email = "bastien.soucasse@icloud.com" }]
 requires-python = ">= 3.12"
 dynamic = ["version"]
 dependencies = ["rich", "rich_click"]
@@ -22,9 +22,6 @@ source = "vcs"
 
 [tool.hatch.build.hook.vcs]
 version-file = "_version.py"
-
-[tool.hatch.metadata]
-allow-direct-dependencies = true
 
 [tool.ruff]
 line-length = 120
